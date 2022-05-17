@@ -1,0 +1,133 @@
+object SoldatLobbyForm: TSoldatLobbyForm
+  Left = 503
+  Height = 501
+  Top = 310
+  Width = 720
+  Caption = 'Soldat Lobby'
+  ClientHeight = 501
+  ClientWidth = 720
+  OnActivate = onActivate
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.0.4'
+  object TopPanel: TPanel
+    Left = 0
+    Height = 32
+    Top = 0
+    Width = 720
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 32
+    ClientWidth = 720
+    TabOrder = 0
+    object RefreshBtn: TButton
+      Left = 0
+      Height = 26
+      Top = 3
+      Width = 70
+      Align = alLeft
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 3
+      BorderSpacing.Bottom = 3
+      Caption = 'Refresh'
+      OnClick = RefreshBtnClick
+      TabOrder = 0
+    end
+    object AddressEdit: TEdit
+      AnchorSideLeft.Control = RefreshBtn
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = JoinBtn
+      Left = 73
+      Height = 26
+      Top = 3
+      Width = 574
+      Align = alLeft
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Left = 3
+      BorderSpacing.Top = 3
+      BorderSpacing.Bottom = 3
+      TabOrder = 1
+    end
+    object JoinBtn: TButton
+      Left = 647
+      Height = 26
+      Top = 3
+      Width = 70
+      Align = alRight
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 3
+      BorderSpacing.Bottom = 3
+      Caption = 'Join'
+      OnClick = JoinBtnClick
+      TabOrder = 2
+    end
+  end
+  object List: TListView
+    AnchorSideTop.Control = TopPanel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 469
+    Top = 32
+    Width = 720
+    Align = alTop
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSortIndicator = True
+    AutoWidthLastColumn = True
+    BorderStyle = bsNone
+    Columns = <    
+      item
+        Caption = 'Name'
+        Width = 250
+      end    
+      item
+        Caption = 'Mode'
+        Width = 80
+      end    
+      item
+        Caption = 'Players'
+        Width = 90
+        SortIndicator = siAscending
+      end    
+      item
+        Caption = 'Map'
+        Width = 200
+      end    
+      item
+        AutoSize = True
+        Caption = 'Version'
+        Width = 100
+      end>
+    HideSelection = False
+    ParentShowHint = False
+    ReadOnly = True
+    RowSelect = True
+    ScrollBars = ssAutoBoth
+    SortColumn = 2
+    SortType = stText
+    TabOrder = 1
+    Visible = False
+    ViewStyle = vsReport
+    OnCompare = ListCompare
+    OnSelectItem = ListSelectItem
+  end
+  object LoadingLabel: TLabel
+    AnchorSideTop.Control = TopPanel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 0
+    Top = 501
+    Width = 720
+    Align = alTop
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = False
+    Caption = 'Loading...'
+    Layout = tlCenter
+  end
+end

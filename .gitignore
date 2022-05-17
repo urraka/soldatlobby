@@ -1,0 +1,6 @@
+/lib
+*.sublime-workspace
+*.sublime-project
+*.lps
+/soldatlobby
+/soldatlobby.dbg
