@@ -9,7 +9,6 @@ object SoldatLobbyForm: TSoldatLobbyForm
   OnActivate = onActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.2.0.4'
   object TopPanel: TPanel
     Left = 0
     Height = 32
@@ -111,6 +110,7 @@ object SoldatLobbyForm: TSoldatLobbyForm
     Visible = False
     ViewStyle = vsReport
     OnCompare = ListCompare
+    OnDblClick = ListDblClick
     OnSelectItem = ListSelectItem
   end
   object LoadingLabel: TLabel

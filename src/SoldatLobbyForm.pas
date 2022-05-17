@@ -37,6 +37,7 @@ type
         procedure JoinBtnClick(Sender: TObject);
         procedure ListCompare(Sender: TObject; Item1, Item2: TListItem;
             Data: Integer; var Compare: Integer);
+        procedure ListDblClick(Sender: TObject);
         procedure ListSelectItem(Sender: TObject; Item: TListItem;
             Selected: Boolean);
         procedure onActivate(Sender: TObject);
@@ -93,6 +94,11 @@ end;
 procedure TSoldatLobbyForm.RefreshBtnClick(Sender: TObject);
 begin
     StartReload();
+end;
+
+procedure TSoldatLobbyForm.ListDblClick(Sender: TObject);
+begin
+    JoinBtnClick(Sender);
 end;
 
 procedure TSoldatLobbyForm.JoinBtnClick(Sender: TObject);
